@@ -5,8 +5,10 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import pages.BaseUtil;
+import pages.LoginPage;
 
-public class Login_Test extends BaseUtil {
+public class Login_Test{
+WebDriver driver;
     @Before
     public void OpenBrowser(){
         driver = Browsers.launchBrowser("Chrome");
@@ -20,7 +22,9 @@ public class Login_Test extends BaseUtil {
 
     @Test
     public void loginWithValidUser(){
-        ;
+        LoginPage login = new LoginPage(driver);
+        login.sauceDemoLogin(Constant.USERNAME,Constant.PASSWORD);
+        login.setLoginButton();
     }
 
 }

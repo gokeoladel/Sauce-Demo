@@ -11,7 +11,7 @@ import java.awt.print.PageFormat;
 public class BaseUtil {
     protected WebDriver driver;
 
-    public void BaseUtil(WebDriver driver){
+    public BaseUtil(WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
@@ -24,6 +24,6 @@ public class BaseUtil {
     public static final By LOGIN_BUTTON = By.id("login-button");
 
     public void setLoginButton(){
-        driver.findElement(LOGIN_BUTTON);
+        driver.findElement(LOGIN_BUTTON).click();
     }
 }
